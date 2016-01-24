@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="br.ufpi.es.checar.Visao.TelaPrincipal">
+
+
+    <!--Parte Superior do Layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1.2"
+        android:background="@color/colorPrimary">
+
+        <!--Nome do App-->
+        <LinearLayout style="@style/LinearLayoutMatchWrapStyle">
+            <ImageView
+                android:layout_width="280dp"
+                android:layout_height="60dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/logo_nome_app"/>
+            <!--<TextView-->
+                <!--android:id="@+id/textViewNameApp"-->
+                <!--style="@style/TextViewNameStyle"/>-->
+        </LinearLayout>
+
+        <!--Logo do App-->
+        <LinearLayout style="@style/LinearLayoutMatchWrapStyle">
+            <ImageView
+                android:src="@drawable/icon_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--Parte Inferior do Layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:background="@android:color/background_light">
+
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent">
+            <!--1 Linha da tabela para os Icones -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <ImageButton
+                    android:layout_height="48dp"
+                    android:layout_width="48dp"
+                    android:scaleType="fitXY"
+                    android:tag="Novo"
+                    android:src="@drawable/icon_add"
+                    android:background="@android:color/transparent"
+                    android:clickable="true" />
+                <ImageButton
+                    android:layout_height="48dp"
+                    android:layout_width="48dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:tag="Busca"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_lupa"
+                    android:background="@android:color/transparent"/>
+                <ImageButton
+                    android:layout_height="48dp"
+                    android:layout_width="48dp"
+                    android:scaleType="fitXY"
+                    android:tag="Login"
+                    android:src="@drawable/icon_login"
+                    android:background="@android:color/transparent"/>
+            </TableRow>
+            <!--2 Linha da tabela para os Nomes dos Icones -->
+            <TableRow android:gravity="center">
+                <TextView
+                    android:gravity="center"
+                    android:textColor="#909090"
+                    android:text="Novo"/>
+                <TextView
+                    android:gravity="center"
+                    android:textColor="#909090"
+                    android:text="Busca"/>
+                <TextView
+                    android:gravity="center"
+                    android:textColor="#909090"
+                    android:text="Login"/>
+            </TableRow>
+        </TableLayout>
+
+
+
+
+    </LinearLayout>
+
+    <!--Parte Inferior do Layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="2.5"
+        android:background="@android:color/background_light">
+
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_info"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#909090"
+            android:text="Version:1.0"/>
+        </LinearLayout>
+
+
+</LinearLayout>
