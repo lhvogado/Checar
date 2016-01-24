@@ -3,9 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
 
     tools:context="br.ufpi.es.checar.Visao.TelaPrincipal">
+
+    <!-- Action Bar: Mudada para Toolbar versão atualizada-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+
 
 
     <!--Parte Superior do Layout-->
@@ -55,30 +69,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center">
-                <ImageButton
+                <Button
                     android:layout_height="48dp"
                     android:layout_width="48dp"
                     android:scaleType="fitXY"
                     android:tag="Novo"
-                    android:src="@drawable/icon_add"
-                    android:background="@android:color/transparent"
-                    android:clickable="true" />
-                <ImageButton
+                    android:background="@drawable/button_custom"
+                    android:clickable="true"/>
+                <!--android:src="@drawable/icon_add"-->
+
+
+                <Button
                     android:layout_height="48dp"
                     android:layout_width="48dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginRight="60dp"
                     android:tag="Busca"
                     android:scaleType="fitXY"
-                    android:src="@drawable/icon_lupa"
-                    android:background="@android:color/transparent"/>
-                <ImageButton
+                    android:background="@drawable/button_custom2"
+                    />
+                <Button
                     android:layout_height="48dp"
                     android:layout_width="48dp"
                     android:scaleType="fitXY"
                     android:tag="Login"
+                    android:background="@drawable/button_custom3"
                     android:src="@drawable/icon_login"
-                    android:background="@android:color/transparent"/>
+                    />
             </TableRow>
             <!--2 Linha da tabela para os Nomes dos Icones -->
             <TableRow android:gravity="center">

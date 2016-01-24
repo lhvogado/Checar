@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector android:enterFadeDuration="@android:integer/config_shortAnimTime" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/icon_add_state_pressed"
+        android:state_pressed="true" />
+    <item android:drawable="@drawable/icon_camera"
+        android:state_focused="true" />
+    <item android:drawable="@drawable/icon_add" />
+</selector>
