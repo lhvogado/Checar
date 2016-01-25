@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="br.ufpi.es.checar.Visao.TelaNovoCNH">
+
+    <!--Action Bar: Mudada para Toolbar versão atualizada&ndash;&gt;-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:titleTextColor="@android:color/background_light"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <!-- Parte Superior -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_margin="30dp"
+            android:text="Tire uma Foto de sua CNH"/>
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="148dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_cnh"/>
+
+
+
+    </LinearLayout>
+    <!-- Parte Inferior-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:onClick="TesteButton2"
+            android:layout_width="48dp"
+            android:background="@android:color/transparent"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_camera"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center|top"
+            android:layout_height="match_parent"
+            android:text="Capturar"/>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

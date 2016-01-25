@@ -1,6 +1,5 @@
 package br.ufpi.es.checar.Visao;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,29 +9,29 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-
-import br.ufpi.es.checar.Controle.Controle;
 import br.ufpi.es.checar.R;
 
-public class TelaPrincipal extends AppCompatActivity {
+public class TelaNovoCNH extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_principal);
-
-        // TOOLBAR
+        setContentView(R.layout.activity_tela_novo_cnh);
+//        // TOOLBAR
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
-        //Disabilitar Back Icon ActionBar
         assert ab != null;
-        ab.setDefaultDisplayHomeAsUpEnabled(false);
+        //Disabilitar Back Icon ActionBar
+        //ab.setDefaultDisplayHomeAsUpEnabled(false);
         //Disabilitar nome App ActionBar
-        ab.setDisplayShowTitleEnabled(false);
+        ab.setDisplayShowTitleEnabled(true);
+
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -55,9 +54,7 @@ public class TelaPrincipal extends AppCompatActivity {
 //                return true;
 
             case R.id.action_favorite:
-
-                Toast.makeText(TelaPrincipal.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
                 // User chose the "Favorite" action, mark the current item
                 // as a favorite...
                 return true;
@@ -69,14 +66,10 @@ public class TelaPrincipal extends AppCompatActivity {
 
         }
     }
-
-    public void Telacnh(View view){
-        Intent intent = new Intent(this, TelaNovoCNH.class);
-        startActivity(intent);
+    public void TesteButton2(View view){
+        Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
     }
 
 
-    public void TesteButton(View view){
-        Toast.makeText(TelaPrincipal.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
-    }
+
 }

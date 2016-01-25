@@ -37,14 +37,12 @@
                 android:layout_height="60dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/logo_nome_app"/>
-            <!--<TextView-->
-                <!--android:id="@+id/textViewNameApp"-->
-                <!--style="@style/TextViewNameStyle"/>-->
         </LinearLayout>
 
         <!--Logo do App-->
         <LinearLayout style="@style/LinearLayoutMatchWrapStyle">
             <ImageView
+                android:layout_gravity="top"
                 android:src="@drawable/icon_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -60,7 +58,6 @@
         android:background="@android:color/background_light">
 
         <TableLayout
-
             android:layout_width="match_parent"
             android:gravity="center"
             android:layout_height="match_parent">
@@ -74,43 +71,45 @@
                     android:layout_width="48dp"
                     android:scaleType="fitXY"
                     android:tag="Novo"
+                    android:onClick="Telacnh"
                     android:background="@drawable/button_custom"
                     android:clickable="true"/>
-                <!--android:src="@drawable/icon_add"-->
-
 
                 <Button
+                    android:onClick="TesteButton"
                     android:layout_height="48dp"
                     android:layout_width="48dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginRight="60dp"
                     android:tag="Busca"
                     android:scaleType="fitXY"
-                    android:background="@drawable/button_custom2"
-                    />
+                    android:background="@drawable/button_custom2"/>
+
                 <Button
+                    android:onClick="TesteButton"
                     android:layout_height="48dp"
                     android:layout_width="48dp"
                     android:scaleType="fitXY"
                     android:tag="Login"
                     android:background="@drawable/button_custom3"
-                    android:src="@drawable/icon_login"
-                    />
+                    android:src="@drawable/icon_login"/>
+
             </TableRow>
+
             <!--2 Linha da tabela para os Nomes dos Icones -->
             <TableRow android:gravity="center">
                 <TextView
                     android:gravity="center"
-                    android:textColor="#909090"
-                    android:text="Novo"/>
+                    android:textColor="@color/colorTextGrey"
+                    android:text="@string/text_novo"/>
                 <TextView
                     android:gravity="center"
-                    android:textColor="#909090"
-                    android:text="Busca"/>
+                    android:textColor="@color/colorTextGrey"
+                    android:text="@string/text_buscar"/>
                 <TextView
                     android:gravity="center"
-                    android:textColor="#909090"
-                    android:text="Login"/>
+                    android:textColor="@color/colorTextGrey"
+                    android:text="@string/text_login"/>
             </TableRow>
         </TableLayout>
 
@@ -138,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#909090"
-            android:text="Version:1.0"/>
+            android:text="@string/text_version_app"/>
         </LinearLayout>
 
 

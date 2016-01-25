@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Checar</string>
     <string name="action_settings">Settings</string>
+    <string name="text_novo">Novo</string>
+    <string name="text_buscar">Buscar</string>
+    <string name="text_login">Login</string>
+    <string name="text_version_app">Version:1.0</string>
 </resources>
