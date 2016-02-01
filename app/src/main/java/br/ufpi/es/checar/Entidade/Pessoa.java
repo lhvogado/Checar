@@ -10,6 +10,15 @@ public class Pessoa {
     private Date data_Nascimento;
     private String CPF;
     private String RG;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getNome() {
         return nome;
