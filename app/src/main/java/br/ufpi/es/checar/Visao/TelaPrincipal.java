@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Toast;
 
 
-import br.ufpi.es.checar.Controle.Controle;
 import br.ufpi.es.checar.R;
 
 public class TelaPrincipal extends AppCompatActivity {
