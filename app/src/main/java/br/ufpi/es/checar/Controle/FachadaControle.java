@@ -8,12 +8,8 @@ import android.view.SurfaceHolder;
  */
 public class FachadaControle {
 
-    private ControladorCamera meuControladorCamera;
+    public ControladorCamera meuControladorCamera;
     //private ControleDePessoa meuControleDePessoa;
-
-    public FachadaControle (){
-
-    }
 
     public void getInstanciaControladorCamera(SurfaceHolder holder){
 

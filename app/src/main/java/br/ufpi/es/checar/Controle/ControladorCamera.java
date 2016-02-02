@@ -22,7 +22,7 @@ public class ControladorCamera {
     private static final String TAG = "DBG_" + ControladorCamera.class.getName();
 
 
-    //On = Camera Ligada Off  = Camera Desligada
+    //On = Camera Ligada  Off = Camera Desligada
     public boolean isOn() {
 
         return on;
@@ -41,19 +41,19 @@ public class ControladorCamera {
     }
 
     static public ControladorCamera New(SurfaceHolder surfaceHolder){
-        Log.d(TAG, "Creating camera engine");
+        Log.d(TAG, "Criando o controlador da camera");
         return  new ControladorCamera(surfaceHolder);
     }
 
     public void start() {
 
-        Log.d(TAG, "Entered CameraEngine - start()");
+        Log.d(TAG, "Entrou ControladorCamera - start()");
         this.camera = CameraUtil.getCamera();
 
         if (this.camera == null)
             return;
 
-        Log.d(TAG, "Got camera hardware");
+        Log.d(TAG, "Possui controle da camera");
 
         try {
 
@@ -81,7 +81,7 @@ public class ControladorCamera {
             //Camera.Size cSize = sizes.get(sizes.size() - 1);
 
 
-            Log.i(TAG, "Chosen resolution: " + cSize.width + " " + cSize.height);
+            Log.i(TAG, "Resolução escolhida: " + cSize.width + " " + cSize.height);
             parameters.setPictureSize(cSize.width, cSize.height);
             this.camera.setParameters(parameters);
 
@@ -99,10 +99,10 @@ public class ControladorCamera {
 
             on = true;
 
-            Log.d(TAG, "CameraEngine preview started");
+            Log.d(TAG, "Preview da camera iniciada");
 
         } catch (IOException e) {
-            Log.e(TAG, "Error in setPreviewDisplay");
+            Log.e(TAG, "Erro em setPreviewDisplay");
         }
     }
 
@@ -119,7 +119,7 @@ public class ControladorCamera {
 
         on = false;
 
-        Log.d(TAG, "CameraEngine Stopped");
+        Log.d(TAG, "Camera parada");
     }
 
     public void requestFocus() {
