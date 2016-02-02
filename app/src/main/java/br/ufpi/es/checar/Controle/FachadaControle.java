@@ -52,7 +52,6 @@ public class FachadaControle {
                              Camera.PictureCallback rawPictureCallback,
                              Camera.PictureCallback jpegPictureCallback){
 
-
         this.meuControladorCamera.takeShot(shutterCallback, rawPictureCallback, jpegPictureCallback);
 
     }

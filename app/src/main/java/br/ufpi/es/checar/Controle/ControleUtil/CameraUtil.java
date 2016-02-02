@@ -12,6 +12,7 @@ public class CameraUtil {
 
     private static final String TAG = "DBG_" + CameraUtil.class.getName();
 
+    //Verifica se o dispositivo possui camera
     public static boolean hasCameraHardware(Context context){
         return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_AUTOFOCUS);
     }

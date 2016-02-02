@@ -21,6 +21,8 @@ public class ControladorCamera {
 
     private static final String TAG = "DBG_" + ControladorCamera.class.getName();
 
+
+    //On = Camera Ligada Off  = Camera Desligada
     public boolean isOn() {
 
         return on;
