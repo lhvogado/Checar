@@ -1,6 +1,5 @@
 package br.ufpi.es.checar.Controle;
 
-
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Environment;
@@ -29,7 +28,7 @@ public class ControleDeCaptura {
 
     private static final String TAG = "Checar.java";
 
-    private String imagePath;
+    private static String imagePath;
 
     public void createOCRDirectory(){
 
@@ -50,12 +49,12 @@ public class ControleDeCaptura {
 
     }
 
-    public void createOCRTrainedLang(Context myContext){
+    public void createOCRTrainedLang(Context context){
 
         if (!(new File(DATA_PATH + "tessdata/" + lang + ".traineddata")).exists()) {
             try {
 
-                AssetManager assetManager = myContext.getAssets();
+                AssetManager assetManager = context.getAssets();
                 InputStream in = assetManager.open("tessdata/" + lang + ".traineddata");
                 //GZIPInputStream gin = new GZIPInputStream(in);
                 OutputStream out = new FileOutputStream(DATA_PATH
@@ -83,10 +82,15 @@ public class ControleDeCaptura {
     }
 
     public void setImagePath() {
-        this.imagePath = DATA_PATH + "/ocr.jpg";
+
+        Log.v(TAG, "Caminho imagem: " + DATA_PATH + "ocr.jpg");
+
+
+        ControleDeCaptura.imagePath = DATA_PATH + "ocr.jpg";
     }
 
     public String getImagePath() {
-        return imagePath;
+
+        return ControleDeCaptura.imagePath;
     }
 }

@@ -11,12 +11,25 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import br.ufpi.es.checar.Controle.FachadaControle;
 import br.ufpi.es.checar.R;
 
 public class TelaPrincipal extends AppCompatActivity {
 
+    FachadaControle fachadaControle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        fachadaControle = new FachadaControle();
+
+        fachadaControle.criarDiretorioOCR();
+
+        fachadaControle.criarArquivoLinguagemOCR(this);
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_principal);
 
@@ -30,6 +43,8 @@ public class TelaPrincipal extends AppCompatActivity {
         ab.setDefaultDisplayHomeAsUpEnabled(false);
         //Disabilitar nome App ActionBar
         ab.setDisplayShowTitleEnabled(false);
+
+        fachadaControle.setDiretorioImagem();
 
     }
 

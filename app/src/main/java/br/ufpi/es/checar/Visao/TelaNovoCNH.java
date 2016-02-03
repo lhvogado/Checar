@@ -1,14 +1,14 @@
 package br.ufpi.es.checar.Visao;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,15 +21,15 @@ import br.ufpi.es.checar.R;
 
 public class TelaNovoCNH extends AppCompatActivity {
 
+    private static final String TAG = "Checar.java";
     FachadaControle fachadaControle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        fachadaControle = new FachadaControle();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_novo_cnh);
-        fachadaControle = new FachadaControle();
-
-
 
 //        // TOOLBAR
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -41,7 +41,19 @@ public class TelaNovoCNH extends AppCompatActivity {
         //ab.setDefaultDisplayHomeAsUpEnabled(false);
         //Disabilitar nome App ActionBar
         ab.setDisplayShowTitleEnabled(true);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        //Log.i(TAG, "resultCode: " + resultCode);
+
+        if (resultCode == Activity.RESULT_OK) {
+            Intent intent = new Intent(this, TelaRecorteImagem.class);
+            startActivity(intent);
+        } else {
+            Log.v(TAG, "Cancelado Pelo Usuário");
+        }
     }
 
 
@@ -86,7 +98,7 @@ public class TelaNovoCNH extends AppCompatActivity {
     public void cameraCNH(View view){
         //Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
 
-        File file = new File(fachadaControle.getImagePath());
+        File file = new File(fachadaControle.getDiretorioImagem());
         Uri outputFileUri = Uri.fromFile(file);
 
         final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
