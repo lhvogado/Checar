@@ -33,4 +33,8 @@ public class FachadaControle {
         return meuControleDeCaptura.getImagePath();
     }
 
+    public String OCR(){
+        return meuControleDeCaptura.OCR();
+    }
+
 }

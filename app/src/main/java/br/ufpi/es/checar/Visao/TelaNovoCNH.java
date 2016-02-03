@@ -50,7 +50,7 @@ public class TelaNovoCNH extends AppCompatActivity {
         //Log.i(TAG, "resultCode: " + resultCode);
 
         if (resultCode == Activity.RESULT_OK) {
-            Intent intent = new Intent(this, TelaRecorteImagem.class);
+            Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
             startActivity(intent);
         } else {
             Log.v(TAG, "Cancelado Pelo Usuário");
