@@ -51,12 +51,13 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:onClick="TesteButton2"
+            android:onClick="cameraCNH"
             android:layout_width="48dp"
             android:background="@android:color/transparent"
             android:layout_height="48dp"
             android:scaleType="fitXY"
-            android:src="@drawable/icon_camera"/>
+            android:src="@drawable/icon_camera"
+            android:id="@+id/botao_captura_cnh" />
         <TextView
             android:layout_width="match_parent"
             android:gravity="center|top"

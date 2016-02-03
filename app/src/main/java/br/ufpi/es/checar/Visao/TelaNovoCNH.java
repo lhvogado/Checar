@@ -1,5 +1,10 @@
 package br.ufpi.es.checar.Visao;
 
+import android.content.Intent;
+import android.content.res.AssetManager;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,14 +14,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.File;
+
+import br.ufpi.es.checar.Controle.FachadaControle;
 import br.ufpi.es.checar.R;
 
 public class TelaNovoCNH extends AppCompatActivity {
+
+    FachadaControle fachadaControle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_novo_cnh);
+        fachadaControle = new FachadaControle();
+
+
+
 //        // TOOLBAR
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -27,7 +41,6 @@ public class TelaNovoCNH extends AppCompatActivity {
         //ab.setDefaultDisplayHomeAsUpEnabled(false);
         //Disabilitar nome App ActionBar
         ab.setDisplayShowTitleEnabled(true);
-
 
     }
 
@@ -42,6 +55,8 @@ public class TelaNovoCNH extends AppCompatActivity {
 //                (SearchView) MenuItemCompat.getActionView(searchItem);
 
         // Configure the search info and add any event listeners...
+
+
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -66,10 +81,18 @@ public class TelaNovoCNH extends AppCompatActivity {
 
         }
     }
-    public void TesteButton2(View view){
-        Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
+
+
+    public void cameraCNH(View view){
+        //Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
+
+        File file = new File(fachadaControle.getImagePath());
+        Uri outputFileUri = Uri.fromFile(file);
+
+        final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
+
+        startActivityForResult(intent, 0);
     }
-
-
 
 }

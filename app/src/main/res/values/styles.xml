@@ -18,14 +18,6 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-
-
-
-
-
-
-
-
     <style name="LinearLayoutMatchWrapStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -33,20 +25,21 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <!--<style name="LinearLayoutStyle" >-->
-        <!--<item name="android:layout_height">wrap_content</item>-->
-        <!--<item name="andr"-->
-        <!--<item name="android:textColor">#ffffff</item>-->
-        <!--<item name="android:textSize">70sp</item>-->
-        <!--<item name="android:textStyle">bold</item>-->
-        <!--&lt;!&ndash;<item name="android:shadowColor">#000000</item>&ndash;&gt;-->
-        <!--&lt;!&ndash;<item name="android:shadowDx">1</item>&ndash;&gt;-->
-        <!--&lt;!&ndash;<item name="android:shadowDy">1</item>&ndash;&gt;-->
-        <!--&lt;!&ndash;<item name="android:shadowRadius">2</item>&ndash;&gt;-->
+    <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--<item name="andr"-->
+    <!--<item name="android:textColor">#ffffff</item>-->
+    <!--<item name="android:textSize">70sp</item>-->
+    <!--<item name="android:textStyle">bold</item>-->
+    <!--&lt;!&ndash;<item name="android:shadowColor">#000000</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="android:shadowDx">1</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="android:shadowDy">1</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="android:shadowRadius">2</item>&ndash;&gt;-->
     <!--</style>-->
-
-
-
 
 
 </resources>
