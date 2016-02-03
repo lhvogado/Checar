@@ -21,6 +21,7 @@ import com.googlecode.tesseract.android.TessBaseAPI;
  */
 public class ControleDeCaptura {
 
+
     private static final String DATA_PATH = Environment
             .getExternalStorageDirectory().toString() + "/Checar/";
 

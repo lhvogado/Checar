@@ -46,6 +46,7 @@ public class TelaPrincipal extends AppCompatActivity {
 
         fachadaControle.setDiretorioImagem();
 
+
     }
 
     @Override

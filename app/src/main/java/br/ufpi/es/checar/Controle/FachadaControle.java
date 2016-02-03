@@ -11,6 +11,7 @@ public class FachadaControle {
     //private ControleDePessoa meuControleDePessoa;
 
 
+
     public FachadaControle(){
         meuControleDeCaptura = new ControleDeCaptura();
     }

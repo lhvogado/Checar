@@ -21,6 +21,7 @@ import br.ufpi.es.checar.R;
 
 public class TelaNovoCNH extends AppCompatActivity {
 
+
     private static final String TAG = "Checar.java";
     FachadaControle fachadaControle;
 

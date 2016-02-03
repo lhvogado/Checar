@@ -7,6 +7,7 @@ import br.ufpi.es.checar.R;
 
 public class TelaRecorteImagem extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
