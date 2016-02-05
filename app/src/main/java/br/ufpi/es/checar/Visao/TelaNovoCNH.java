@@ -2,6 +2,7 @@ package br.ufpi.es.checar.Visao;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
@@ -24,6 +25,10 @@ public class TelaNovoCNH extends AppCompatActivity {
 
     private static final String TAG = "Checar.java";
     FachadaControle fachadaControle;
+
+
+    private final int CAMERA_CAPTURE = 1; //Fotografia
+    private final int CROP_PIC = 2; //Recorte
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +55,27 @@ public class TelaNovoCNH extends AppCompatActivity {
         //Log.i(TAG, "resultCode: " + resultCode);
 
         if (resultCode == Activity.RESULT_OK) {
-            Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
-            startActivity(intent);
+            if(requestCode == CAMERA_CAPTURE){
+                //startActivityForResult(fachadaControle.configurarIntentRecorte(this), 2);
+                //Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
+                Intent intent = new Intent(this, TelaRecorteImagem.class);
+                startActivity(intent);
+            }
+            else{
+                if(requestCode == CROP_PIC){
+
+                    //get the returned data
+                    Bundle extras = data.getExtras();
+                    //get the cropped bitmap
+                    Bitmap thePic = extras.getParcelable("data");
+
+
+
+                    Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
+                    startActivity(intent);
+                }
+            }
+
         } else {
             Log.v(TAG, "Cancelado Pelo Usuário");
         }
@@ -102,10 +126,10 @@ public class TelaNovoCNH extends AppCompatActivity {
         File file = new File(fachadaControle.getDiretorioImagem());
         Uri outputFileUri = Uri.fromFile(file);
 
-        final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
 
-        startActivityForResult(intent, 0);
+        startActivityForResult(intent, 1);
     }
 
 }

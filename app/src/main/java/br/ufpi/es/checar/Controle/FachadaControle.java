@@ -1,6 +1,8 @@
 package br.ufpi.es.checar.Controle;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 
 /**
  * Created by na7an on 13/01/2016.
@@ -35,6 +37,14 @@ public class FachadaControle {
 
     public String OCR(){
         return meuControleDeCaptura.OCR();
+    }
+
+    public Intent configurarIntentRecorte(Context context){
+        return meuControleDeCaptura.configCropIntent(context);
+    }
+
+    public void setImagem(Bitmap imagem){
+        meuControleDeCaptura.setImage(imagem);
     }
 
 }

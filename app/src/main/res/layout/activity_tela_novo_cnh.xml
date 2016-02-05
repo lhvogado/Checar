@@ -58,6 +58,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/icon_camera"
             android:id="@+id/botao_captura_cnh" />
+
         <TextView
             android:layout_width="match_parent"
             android:gravity="center|top"

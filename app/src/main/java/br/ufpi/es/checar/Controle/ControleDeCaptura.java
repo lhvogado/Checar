@@ -1,13 +1,17 @@
 package br.ufpi.es.checar.Controle;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,6 +36,8 @@ public class ControleDeCaptura {
     private static final String lang = "por";
 
     private static final String TAG = "Checar.java";
+
+    private static Bitmap image;
 
     private static String imagePath;
 
@@ -157,12 +163,12 @@ public class ControleDeCaptura {
     public String OCR(){
 
 
-        Bitmap bitmap = decodeBitmap();
+        //Bitmap bitmap = decodeBitmap();
 
         TessBaseAPI baseApi = new TessBaseAPI();
         baseApi.setDebug(true);
         baseApi.init(DATA_PATH, lang);
-        baseApi.setImage(bitmap);
+        baseApi.setImage(ControleDeCaptura.image);
 
         String recognizedText = baseApi.getUTF8Text();
 
@@ -191,6 +197,48 @@ public class ControleDeCaptura {
 
         return recognizedText;
 
+    }
+
+    public Intent configCropIntent(Context context){
+
+        Intent intent = new Intent("com.android.camera.action.CROP");
+
+        try {
+            //call the standard crop action intent (the user device may not support it)
+            //Intent intent = new Intent("com.android.camera.action.CROP");
+            //indicate image type and Uri
+
+            File file = new File(getImagePath());
+            Uri fileUri = Uri.fromFile(file);
+
+            intent.setDataAndType(fileUri, "image/*");
+            //set crop properties
+            intent.putExtra("crop", "true");
+            //indicate aspect of desired crop
+            intent.putExtra("aspectX", 1);
+            intent.putExtra("aspectY", 1);
+            //indicate output X and Y
+            intent.putExtra("outputX", 500);
+            intent.putExtra("outputY", 250);
+            //retrieve data on return
+            intent.putExtra("return-data", true);
+            //start the activity - we handle returning in onActivityResult
+
+
+        }
+        catch(ActivityNotFoundException anfe){
+            //display an error message
+            String errorMessage = "Seu dispositivo não suporta recorte! - Vá comprar outro";
+            Toast toast = Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
+        return intent;
+
+    }
+
+    public void setImage(Bitmap image){
+        ControleDeCaptura.image = image;
     }
 
 }
