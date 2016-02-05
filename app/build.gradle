@@ -26,4 +26,5 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
 	compile project(':libraries:tess-two')
     compile project(':libraries:cropper')
+    compile project(':libraries:Catalano.Android.Image')
 }

@@ -1,3 +1,4 @@
 include ':app'
 include ':libraries:tess-two'
 include ':libraries:cropper'
+include ':libraries:Catalano.Android.Image'

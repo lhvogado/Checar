@@ -1,5 +1,6 @@
 package br.ufpi.es.checar.Controle;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -10,12 +11,14 @@ import android.graphics.Bitmap;
 public class FachadaControle {
 
     private ControleDeCaptura meuControleDeCaptura;
+    private ControleUtil meuControleUtil;
     //private ControleDePessoa meuControleDePessoa;
 
 
 
     public FachadaControle(){
         meuControleDeCaptura = new ControleDeCaptura();
+        meuControleUtil = new ControleUtil();
     }
 
 
@@ -45,6 +48,10 @@ public class FachadaControle {
 
     public void setImagem(Bitmap imagem){
         meuControleDeCaptura.setImage(imagem);
+    }
+
+    public void solicitarPermissao(Context context, Activity activity, final String PERMISSION, final int REQUEST_CODE){
+        meuControleUtil.requestUserPermission(context, activity, PERMISSION, REQUEST_CODE);
     }
 
 }

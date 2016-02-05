@@ -18,14 +18,22 @@ public class TelaPrincipal extends AppCompatActivity {
 
     FachadaControle fachadaControle;
 
+    //private final String PERMISSION = "CAMERA";
+    //private final int REQUEST_CODE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
 
         fachadaControle = new FachadaControle();
 
         fachadaControle.criarDiretorioOCR();
 
         fachadaControle.criarArquivoLinguagemOCR(this);
+
+        //fachadaControle.solicitarPermissao(this, this, PERMISSION, REQUEST_CODE);
 
 
 
@@ -93,5 +101,12 @@ public class TelaPrincipal extends AppCompatActivity {
 
     public void TesteButton(View view){
         Toast.makeText(TelaPrincipal.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+
+
     }
 }
