@@ -7,29 +7,27 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.Date;
 
 public class ConexaoBD extends SQLiteOpenHelper {
-    private static final String NOME_BD = "teste";
-    static final String TABELA = "Cliente";
-    private static final int VERSAO_BD = 1;
-    Pessoa p = new Pessoa();
-    static int CPF;
-    static int RG;
-    static String Nome;
-    String email;
-    Date data = p.getData_Nascimento();
+    private static final String NOME_BANCO = "banco.db";
+    static final String ID = "_id";
+    static final String TABELA = "cliente";
+    private static final int VERSAO_BD = 13;
+    static final String CPF = "CPF";
+    static final String RG = "RG";
+    static final String Nome = "Nome";
 
     public ConexaoBD(Context ctx){
-        super(ctx, NOME_BD, null, VERSAO_BD);
+        super(ctx, NOME_BANCO, null, VERSAO_BD);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase bd) {
-        bd.execSQL("CREATE TABLE cliente(_" +
-                "CPF integer primary key, " +
-                " RG integer not null," +
-                " nome text not null," +
-                " email text not null," +
-                " Data text not null);");
+        String sql = "CREATE TABLE" + TABELA + "("
+                + ID + "integer primary key autoincrement,"
+                + CPF + "text,"
+                + RG + "text,"
+                + Nome + "text"
+                +");";
+        bd.execSQL(sql);
     }
 
     @Override
@@ -37,5 +35,4 @@ public class ConexaoBD extends SQLiteOpenHelper {
         bd.execSQL("drop table cliente;");
         onCreate(bd);
     }
-
 }
