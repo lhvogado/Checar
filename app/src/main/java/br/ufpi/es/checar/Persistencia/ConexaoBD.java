@@ -18,7 +18,6 @@ public class ConexaoBD extends SQLiteOpenHelper {
     public ConexaoBD(Context ctx){
         super(ctx, NOME_BANCO, null, VERSAO_BD);
     }
-
     @Override
     public void onCreate(SQLiteDatabase bd) {
         String sql = "CREATE TABLE" + TABELA + "("
@@ -29,7 +28,6 @@ public class ConexaoBD extends SQLiteOpenHelper {
                 +");";
         bd.execSQL(sql);
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase bd, int arg1, int arg2) {
         bd.execSQL("drop table cliente;");
