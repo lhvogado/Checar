@@ -100,7 +100,8 @@ public class TelaPrincipal extends AppCompatActivity {
 
 
     public void TesteButton(View view){
-        Toast.makeText(TelaPrincipal.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, TelaCadastro.class);
+        startActivity(intent);
     }
 
     @Override

@@ -34,7 +34,8 @@
                 android:value="br.ufpi.es.checar.Visao.TelaPrincipal" />
         </activity>
         <activity android:name=".Visao.TelaRecorteImagem" />
-        <activity android:name=".Visao.TelaAlterarDadosCNH"></activity>
+        <activity android:name=".Visao.TelaAlterarDadosCNH" />
+        <activity android:name=".Visao.TelaCadastro"></activity>
     </application>
 
 </manifest>
