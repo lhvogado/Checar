@@ -16,6 +16,7 @@ public class ConexaoBD extends SQLiteOpenHelper {
     static final String RG = "RG";
     static final String Nome = "Nome";
 
+
     public ConexaoBD(Context ctx){
         super(ctx, NOME_BANCO, null, VERSAO_BD);
     }
@@ -30,6 +31,7 @@ public class ConexaoBD extends SQLiteOpenHelper {
         bd.execSQL(sql);
     }
     @Override
+
     public void onUpgrade(SQLiteDatabase bd, int arg1, int arg2) {
         bd.execSQL("drop table cliente;");
         onCreate(bd);

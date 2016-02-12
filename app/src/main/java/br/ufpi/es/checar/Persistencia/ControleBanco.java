@@ -15,6 +15,7 @@ public class ControleBanco {
         db = banco.getWritableDatabase();
     }
 
+
     public void InserirDado(String cpf, String rg, String Nome) {
         ContentValues valores = new ContentValues();
         valores.put("CPF", cpf);
