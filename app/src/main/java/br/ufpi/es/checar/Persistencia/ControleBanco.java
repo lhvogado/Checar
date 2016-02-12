@@ -5,13 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.widget.Toast;
 
-/**
- * Created by luiz henrique on 03/02/2016.
- */
 public class ControleBanco {
     private SQLiteDatabase db;
-    private static final String TAG = "Checar.java";
+
     public ControleBanco(Context context) {
         ConexaoBD banco = new ConexaoBD(context);
         db = banco.getWritableDatabase();
@@ -22,8 +20,9 @@ public class ControleBanco {
         valores.put("CPF", cpf);
         valores.put("RG", rg);
         valores.put("Nome", Nome);
-
         db.insert("cliente", null, valores);
+        db.close();
+
     }
 }
 

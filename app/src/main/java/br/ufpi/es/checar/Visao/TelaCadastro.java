@@ -22,7 +22,7 @@ public class TelaCadastro extends AppCompatActivity {
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ControleBanco controle = new ControleBanco(getBaseContext());
+                ControleBanco bd = new ControleBanco(getBaseContext());
 
                 EditText cpf = (EditText) findViewById(R.id.textEditCPF);
                 EditText rg = (EditText) findViewById(R.id.editTextRG);
@@ -32,7 +32,9 @@ public class TelaCadastro extends AppCompatActivity {
                 String RG = rg.getText().toString();
                 String Nome = nome.getText().toString();
 
-                controle.InserirDado(CPF, RG, Nome);
+                bd.InserirDado(CPF, RG, Nome);
+
+                //Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
 
             }
         });

@@ -1,16 +1,17 @@
 package br.ufpi.es.checar.Persistencia;
 
-import br.ufpi.es.checar.Entidade.Pessoa;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import java.util.Date;
+
 
 public class ConexaoBD extends SQLiteOpenHelper {
-    private static final String NOME_BANCO = "banco.db";
+
+    private static final String NOME_BANCO = "cliente.db";
     static final String ID = "_id";
     static final String TABELA = "cliente";
-    private static final int VERSAO_BD = 13;
+    private static final int VERSAO_BD = 1;
     static final String CPF = "CPF";
     static final String RG = "RG";
     static final String Nome = "Nome";
