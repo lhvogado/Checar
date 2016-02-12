@@ -6,4 +6,8 @@
     <string name="text_login">Login</string>
     <string name="text_version_app">Version:1.0</string>
     <string name="textView_nome">Nome</string>
+    <string name="stringRG">RG</string>
+    <string name="stringCPF">CPF</string>
+    <string name="stringNome">NOME</string>
+    <string name="stringButton">Cadastro</string>
 </resources>
