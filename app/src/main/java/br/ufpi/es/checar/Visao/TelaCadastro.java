@@ -32,8 +32,10 @@ public class TelaCadastro extends AppCompatActivity {
                 String CPF = cpf.getText().toString();
                 String RG = rg.getText().toString();
                 String Nome = nome.getText().toString();
+                String result;
 
-                bd.InserirDado(CPF, RG, Nome);
+                result = bd.InserirDado(CPF, RG, Nome);
+                Toast.makeText(getApplicationContext(),result, Toast.LENGTH_LONG).show();
 
                 //Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
 

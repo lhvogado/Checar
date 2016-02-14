@@ -99,9 +99,14 @@ public class TelaPrincipal extends AppCompatActivity {
     }
 
 
-    public void TesteButton(View view){
+    public void Cadastro(View view){
         Intent intent = new Intent(this, TelaCadastro.class);
         startActivity(intent);
+    }
+
+    public void Buscar(View view){
+        Intent intent2 = new Intent(this, carregaDados.class);
+        startActivity(intent2);
     }
 
     @Override

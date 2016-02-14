@@ -76,7 +76,7 @@
                     android:clickable="true"/>
 
                 <Button
-                    android:onClick="TesteButton"
+                    android:onClick="Buscar"
                     android:layout_height="48dp"
                     android:layout_width="48dp"
                     android:layout_marginLeft="60dp"
@@ -86,7 +86,7 @@
                     android:background="@drawable/button_custom2"/>
 
                 <Button
-                    android:onClick="TesteButton"
+                    android:onClick="Cadastro"
                     android:layout_height="48dp"
                     android:layout_width="48dp"
                     android:scaleType="fitXY"
