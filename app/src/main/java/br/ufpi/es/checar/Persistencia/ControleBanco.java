@@ -9,21 +9,49 @@ import android.widget.Toast;
 
 public class ControleBanco {
     private SQLiteDatabase db;
+    private ConexaoBD banco;
 
     public ControleBanco(Context context) {
-        ConexaoBD banco = new ConexaoBD(context);
-        db = banco.getWritableDatabase();
+        banco = new ConexaoBD(context);
     }
-
-
-    public void InserirDado(String cpf, String rg, String Nome) {
+    public String InserirDado(String cpf, String rg, String Nome) {
         ContentValues valores = new ContentValues();
+        long resultado;
+        db = banco.getWritableDatabase();
         valores.put("CPF", cpf);
         valores.put("RG", rg);
         valores.put("Nome", Nome);
-        db.insert("cliente", null, valores);
+        resultado = db.insert("cliente", null, valores);
         db.close();
+        if(resultado == -1)
+            return "Erro ao inserir registro";
+        else
+            return "Registro Inserido com sucesso";
 
+    }
+
+    public Cursor carregaDados(){
+        Cursor c;
+        String[] campos = {"_id","CPF","RG","Nome"};
+        db = banco.getReadableDatabase();
+        c = db.query("cliente", campos, null, null, null, null, null, null);
+        if (c != null){
+            c.moveToFirst();
+        }
+        db.close();
+        return c;
+    }
+    public Cursor carregaDadoById(String cpf) {
+        Cursor cursor;
+        String[] campos = {"_id","CPF","RG","Nome"};
+        String where = "CPF" + "=" + cpf;
+        db = banco.getReadableDatabase();
+        cursor = db.query("cliente", campos, where, null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
     }
 }
 
