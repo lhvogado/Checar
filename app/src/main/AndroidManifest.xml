@@ -36,7 +36,11 @@
         <activity android:name=".Visao.TelaRecorteImagem" />
         <activity android:name=".Visao.TelaAlterarDadosCNH" />
         <activity android:name=".Visao.TelaCadastro" />
-        <activity android:name=".Visao.carregaDados"></activity>
+        <activity android:name=".Visao.TelaCarregaDados" />
+        <activity android:name=".Visao.TelaCarregaDadosVeiculo" />
+        <activity android:name=".Visao.CadastroPlaca" />
+        <activity android:name=".Visao.TelaNovaPlaca" />
+        <activity android:name=".Visao.TelaAlterarDadosPlaca" />
     </application>
 
 </manifest>

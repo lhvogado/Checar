@@ -10,18 +10,19 @@ import android.widget.SimpleCursorAdapter;
 import br.ufpi.es.checar.Persistencia.ControleBanco;
 import br.ufpi.es.checar.R;
 
-public class carregaDados extends AppCompatActivity {
+public class TelaCarregaDados extends AppCompatActivity {
     private static final String TAG = "Checar.java";
-    private ListView lista;
+    private ListView lista1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrega_dados);
+
         String cpf = this.getIntent().getStringExtra("CPF");
+
         ControleBanco bd = new ControleBanco(getBaseContext());
 
-        //Cursor cursor = bd.carregaDados();
         Cursor cursor1 = bd.carregaDadoById(cpf);
 
         String[] nomeCampos = new String[]{"CPF","RG","Nome"};
@@ -29,9 +30,8 @@ public class carregaDados extends AppCompatActivity {
         int[] idViews = new int[]{
                R.id.idCPFLista, R.id.idRGLista, R.id.idNome
         };
-        SimpleCursorAdapter adp = new SimpleCursorAdapter(getBaseContext(),R.layout.cpf_layout, cursor1, nomeCampos, idViews, 0);
-        lista = (ListView) findViewById(R.id.idLista);
-
-        lista.setAdapter(adp);
+        SimpleCursorAdapter adap = new SimpleCursorAdapter(getBaseContext(),R.layout.cpf_layout, cursor1, nomeCampos, idViews, 0);
+        lista1 = (ListView) findViewById(R.id.idLista);
+        lista1.setAdapter(adap);
     }
 }

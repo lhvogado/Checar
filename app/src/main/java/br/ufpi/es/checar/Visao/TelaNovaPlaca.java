@@ -5,10 +5,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +18,7 @@ import java.io.File;
 import br.ufpi.es.checar.Controle.FachadaControle;
 import br.ufpi.es.checar.R;
 
-public class TelaNovoCNH extends AppCompatActivity {
+public class TelaNovaPlaca extends AppCompatActivity {
 
 
     private static final String TAG = "Checar.java";
@@ -30,24 +28,15 @@ public class TelaNovoCNH extends AppCompatActivity {
     private final int CAMERA_CAPTURE = 1; //Fotografia
     private final int CROP_PIC = 2; //Recorte
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         fachadaControle = new FachadaControle();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_novo_cnh);
-
-//        // TOOLBAR
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        // Get a support ActionBar corresponding to this toolbar
-        ActionBar ab = getSupportActionBar();
-        assert ab != null;
-        //Disabilitar Back Icon ActionBar
-        //ab.setDefaultDisplayHomeAsUpEnabled(false);
-        //Disabilitar nome App ActionBar
-        ab.setDisplayShowTitleEnabled(true);
+        setContentView(R.layout.activity_tela_nova_placa);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -58,8 +47,8 @@ public class TelaNovoCNH extends AppCompatActivity {
             if(requestCode == CAMERA_CAPTURE){
                 //startActivityForResult(fachadaControle.configurarIntentRecorte(this), 2);
                 //Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
-                String codigo = "a";
-                Intent intent = new Intent(this, TelaRecorteImagem.class);
+                String codigo = "b";
+                Intent intent = new Intent(TelaNovaPlaca.this, TelaRecorteImagem.class);
                 intent.putExtra("codigo", codigo);
                 startActivity(intent);
             }
@@ -73,7 +62,7 @@ public class TelaNovoCNH extends AppCompatActivity {
 
 
 
-                    Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
+                    Intent intent = new Intent(this, TelaAlterarDadosPlaca.class);
                     startActivity(intent);
                 }
             }
@@ -108,7 +97,7 @@ public class TelaNovoCNH extends AppCompatActivity {
 //                return true;
 
             case R.id.action_favorite:
-                Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TelaNovaPlaca.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
                 // User chose the "Favorite" action, mark the current item
                 // as a favorite...
                 return true;
@@ -122,7 +111,7 @@ public class TelaNovoCNH extends AppCompatActivity {
     }
 
 
-    public void cameraCNH(View view){
+    public void cameraPlaca(View view){
         //Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
 
         File file = new File(fachadaControle.getDiretorioImagem());
@@ -133,5 +122,8 @@ public class TelaNovoCNH extends AppCompatActivity {
 
         startActivityForResult(intent, 1);
     }
+
+
+
 
 }

@@ -79,12 +79,17 @@ public class TelaRecorteImagem extends AppCompatActivity {
 
         fachadaControle.setImagem(bitmap);
 
+        String cod = this.getIntent().getStringExtra("codigo");
+
+        if(cod.equals("a")){
+            Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
+            startActivity(intent);
+
+        }else if(cod.equals("b")){
+            Intent intent = new Intent(this, TelaAlterarDadosPlaca.class);
+            startActivity(intent);
+
+        }
         //cropImageView.setImageBitmap(bitmap);
-
-        Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
-        startActivity(intent);
-
-
-
     }
 }

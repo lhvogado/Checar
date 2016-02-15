@@ -10,4 +10,11 @@
     <string name="stringCPF">CPF</string>
     <string name="stringNome">NOME</string>
     <string name="stringButton">Cadastro</string>
+    <string name="textCor">Cor</string>
+    <string name="textMotor">Motor</string>
+    <string name="textAno">Ano</string>
+    <string name="textViewPlaca">Placa</string>
+    <string name="textVersao">Versão</string>
+    <string name="textViewModelo">Modelo</string>
+    <string name="telanovo">Tela Placa</string>
 </resources>

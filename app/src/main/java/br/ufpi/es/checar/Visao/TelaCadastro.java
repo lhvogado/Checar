@@ -24,7 +24,6 @@ public class TelaCadastro extends AppCompatActivity {
             public void onClick(View v) {
                 ControleBanco bd = new ControleBanco(getBaseContext());
 
-
                 EditText cpf = (EditText) findViewById(R.id.textEditCPF);
                 EditText rg = (EditText) findViewById(R.id.editTextRG);
                 EditText nome = (EditText) findViewById(R.id.editTextNome);

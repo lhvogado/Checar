@@ -92,23 +92,18 @@ public class TelaPrincipal extends AppCompatActivity {
 
         }
     }
-
     public void Telacnh(View view){
         Intent intent = new Intent(this, TelaNovoCNH.class);
         startActivity(intent);
     }
-
-
     public void Cadastro(View view){
-        Intent intent = new Intent(this, TelaCadastro.class);
+        Intent intent = new Intent(this, CadastroPlaca.class);
         startActivity(intent);
     }
-
     public void Buscar(View view){
-        Intent intent2 = new Intent(this, carregaDados.class);
-        startActivity(intent2);
+        Intent intent = new Intent(this, CadastroPlaca.class);
+        startActivity(intent);
     }
-
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
