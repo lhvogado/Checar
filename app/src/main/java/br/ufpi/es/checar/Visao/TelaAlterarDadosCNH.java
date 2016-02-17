@@ -40,7 +40,7 @@ public class TelaAlterarDadosCNH extends AppCompatActivity {
         //Buscar informações específicas no banco de dados a partir de um determinado CPF
 
     }
-    
+
     public void telaNovaPlaca(View view){
         Intent intent = new Intent(this,TelaNovaPlaca.class);
         startActivity(intent);

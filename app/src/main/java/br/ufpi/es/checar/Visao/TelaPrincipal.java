@@ -1,5 +1,4 @@
 package br.ufpi.es.checar.Visao;
-
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -92,14 +91,29 @@ public class TelaPrincipal extends AppCompatActivity {
 
         }
     }
+
+    /**
+     * Chamada para Activity TelaNovoCNH.class
+     * @author Bruno Adolfo
+     * @param view
+     * @return void
+     */
     public void Telacnh(View view){
         Intent intent = new Intent(this, TelaNovoCNH.class);
         startActivity(intent);
     }
+
+    /**
+     * Chamada para Activity CadastroPlaca.class
+     * @author Bruno Adolfo
+     * @param view
+     * @return void
+     */
     public void Cadastro(View view){
         Intent intent = new Intent(this, CadastroPlaca.class);
         startActivity(intent);
     }
+
     public void Buscar(View view){
         Intent intent = new Intent(this, CadastroPlaca.class);
         startActivity(intent);
