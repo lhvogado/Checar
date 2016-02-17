@@ -90,11 +90,11 @@ public class TelaRecorteImagem extends AppCompatActivity {
 
         String cod = this.getIntent().getStringExtra("codigo");
 
-        if(cod.equals("a")){
+        if(cod.equals("telaNovoCNH")){
             Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
             startActivity(intent);
 
-        }else if(cod.equals("b")){
+        }else if(cod.equals("telaNovaPlaca")){
             Intent intent = new Intent(this, TelaAlterarDadosPlaca.class);
             startActivity(intent);
 

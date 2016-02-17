@@ -40,6 +40,7 @@ public class TelaAlterarDadosPlaca extends AppCompatActivity {
     }
 
     public void teste(View view){
-        Toast.makeText(TelaAlterarDadosPlaca.this, "Sou um Button sem Configuração :(", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this,TelaPrincipal.class);
+        startActivity(intent);
     }
 }
