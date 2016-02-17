@@ -40,13 +40,11 @@ public class TelaNovaPlaca extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        //Log.i(TAG, "resultCode: " + resultCode);
-
         if (resultCode == Activity.RESULT_OK) {
             if(requestCode == CAMERA_CAPTURE){
                 //startActivityForResult(fachadaControle.configurarIntentRecorte(this), 2);
                 //Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
-                String codigo = "b";
+                String codigo = "telaNovaPlaca";
                 Intent intent = new Intent(this, TelaRecorteImagem.class);
                 intent.putExtra("codigo", codigo);
                 startActivity(intent);
@@ -96,8 +94,6 @@ public class TelaNovaPlaca extends AppCompatActivity {
 
 
     public void cameraPlaca(View view){
-        //Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
-
         File file = new File(fachadaControle.getDiretorioImagem());
         Uri outputFileUri = Uri.fromFile(file);
 

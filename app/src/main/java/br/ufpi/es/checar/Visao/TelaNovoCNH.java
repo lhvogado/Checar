@@ -57,7 +57,7 @@ public class TelaNovoCNH extends AppCompatActivity {
             if(requestCode == CAMERA_CAPTURE){
                 //startActivityForResult(fachadaControle.configurarIntentRecorte(this), 2);
                 //Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
-                String codigo = "a";
+                String codigo = "telaNovoCNH";
                 Intent intent = new Intent(this, TelaRecorteImagem.class);
                 intent.putExtra("codigo", codigo);
                 startActivity(intent);
