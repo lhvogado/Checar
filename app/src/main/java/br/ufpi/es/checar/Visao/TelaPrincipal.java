@@ -114,10 +114,17 @@ public class TelaPrincipal extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Exibe lista de todos os dados cadastrados
+     * @author Bruno Adolfo
+     * @param view
+     * @return void
+     */
     public void Buscar(View view){
-        Intent intent = new Intent(this, CadastroPlaca.class);
+        Intent intent = new Intent(this, TelaCarregaDadosVeiculo.class);
         startActivity(intent);
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
