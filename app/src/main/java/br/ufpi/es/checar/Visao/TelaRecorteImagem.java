@@ -11,14 +11,24 @@ import com.edmodo.cropper.CropImageView;
 
 import Catalano.Imaging.Concurrent.Filters.BernsenThreshold;
 import Catalano.Imaging.Concurrent.Filters.BradleyLocalThreshold;
+import Catalano.Imaging.Concurrent.Filters.Closing;
+import Catalano.Imaging.Concurrent.Filters.Dilatation;
 import Catalano.Imaging.Concurrent.Filters.Erosion;
 import Catalano.Imaging.Concurrent.Filters.Grayscale;
+import Catalano.Imaging.Concurrent.Filters.HysteresisThreshold;
+import Catalano.Imaging.Concurrent.Filters.ImageNormalization;
 import Catalano.Imaging.Concurrent.Filters.MaximumEntropyThreshold;
+import Catalano.Imaging.Concurrent.Filters.NiblackThreshold;
 import Catalano.Imaging.Concurrent.Filters.Opening;
 import Catalano.Imaging.Concurrent.Filters.OtsuThreshold;
+import Catalano.Imaging.Concurrent.Filters.RosinThreshold;
+import Catalano.Imaging.Concurrent.Filters.SISThreshold;
 import Catalano.Imaging.Concurrent.Filters.SauvolaThreshold;
 import Catalano.Imaging.Concurrent.Filters.SobelEdgeDetector;
+import Catalano.Imaging.Concurrent.Filters.Threshold;
 import Catalano.Imaging.FastBitmap;
+import Catalano.Imaging.Filters.AdaptiveContrastEnhancement;
+import Catalano.Imaging.Filters.ArtifactsRemoval;
 import br.ufpi.es.checar.Controle.FachadaControle;
 import br.ufpi.es.checar.R;
 
@@ -46,29 +56,28 @@ public class TelaRecorteImagem extends AppCompatActivity {
         Grayscale g = new Grayscale();
         g.applyInPlace(fb);
 
-        //SobelEdgeDetector sobelEdgeDetector = new SobelEdgeDetector();
-        //sobelEdgeDetector.applyInPlace(fb);
-
-        //BradleyLocalThreshold bradleyLocalThreshold = new BradleyLocalThreshold();
-        //bradleyLocalThreshold.applyInPlace(fb);
-
-        //SauvolaThreshold sauvolaThreshold = new SauvolaThreshold();
-        //sauvolaThreshold.applyInPlace(fb);
-
-        //BernsenThreshold bernsenThreshold = new BernsenThreshold();
-        //bernsenThreshold.applyInPlace(fb);
+        //OtsuThreshold otsu = new OtsuThreshold();
+        //otsu.applyInPlace(fb);
 
         //MaximumEntropyThreshold maximumEntropyThreshold = new MaximumEntropyThreshold();
         //maximumEntropyThreshold.applyInPlace(fb);
 
-        OtsuThreshold otsu = new OtsuThreshold();
-        otsu.applyInPlace(fb);
+        //SISThreshold sisThreshold = new SISThreshold();
+        //sisThreshold.applyInPlace(fb);
 
-        Opening erosion = new Opening();
-        erosion.applyInPlace(fb);
+
+        //HysteresisThreshold hysteresisThreshold = new HysteresisThreshold();
+        //hysteresisThreshold.applyInPlace(fb);
+
+        //Opening opening = new Opening();
+        //opening.applyInPlace(fb);
+
+        //Closing closing = new Closing();
+        //closing.applyInPlace(fb);
 
 
         cropImageView.setImageBitmap(fb.toBitmap());
+        //cropImageView.setImageBitmap(bitmap);
 
     }
 

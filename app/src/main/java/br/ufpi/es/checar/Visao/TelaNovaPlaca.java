@@ -26,7 +26,6 @@ public class TelaNovaPlaca extends AppCompatActivity {
 
 
     private final int CAMERA_CAPTURE = 1; //Fotografia
-    private final int CROP_PIC = 2; //Recorte
 
 
     @Override
@@ -48,25 +47,10 @@ public class TelaNovaPlaca extends AppCompatActivity {
                 //startActivityForResult(fachadaControle.configurarIntentRecorte(this), 2);
                 //Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
                 String codigo = "b";
-                Intent intent = new Intent(TelaNovaPlaca.this, TelaRecorteImagem.class);
+                Intent intent = new Intent(this, TelaRecorteImagem.class);
                 intent.putExtra("codigo", codigo);
                 startActivity(intent);
             }
-            else{
-                if(requestCode == CROP_PIC){
-
-                    //get the returned data
-                    Bundle extras = data.getExtras();
-                    //get the cropped bitmap
-                    Bitmap thePic = extras.getParcelable("data");
-
-
-
-                    Intent intent = new Intent(this, TelaAlterarDadosPlaca.class);
-                    startActivity(intent);
-                }
-            }
-
         } else {
             Log.v(TAG, "Cancelado Pelo Usuário");
         }

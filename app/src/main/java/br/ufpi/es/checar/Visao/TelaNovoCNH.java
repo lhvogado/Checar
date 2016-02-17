@@ -28,7 +28,6 @@ public class TelaNovoCNH extends AppCompatActivity {
 
 
     private final int CAMERA_CAPTURE = 1; //Fotografia
-    private final int CROP_PIC = 2; //Recorte
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,21 +62,6 @@ public class TelaNovoCNH extends AppCompatActivity {
                 intent.putExtra("codigo", codigo);
                 startActivity(intent);
             }
-            else{
-                if(requestCode == CROP_PIC){
-
-                    //get the returned data
-                    Bundle extras = data.getExtras();
-                    //get the cropped bitmap
-                    Bitmap thePic = extras.getParcelable("data");
-
-
-
-                    Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
-                    startActivity(intent);
-                }
-            }
-
         } else {
             Log.v(TAG, "Cancelado Pelo Usuário");
         }

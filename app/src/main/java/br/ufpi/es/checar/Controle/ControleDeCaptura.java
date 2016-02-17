@@ -41,6 +41,11 @@ public class ControleDeCaptura {
 
     private static String imagePath;
 
+    /**
+     * Cria o diretório do arquivo de treinamento do tesseract no dispositivo móvel
+     * @author Natanael
+     * @return void
+     */
     public void createOCRDirectory(){
 
         String[] paths = new String[] { DATA_PATH, DATA_PATH + "tessdata/" };
@@ -60,6 +65,12 @@ public class ControleDeCaptura {
 
     }
 
+    /**
+     * Cria o arquivo de treinamento do tesseract
+     * @author Natanael
+     * @param context
+     * @return void
+     */
     public void createOCRTrainedLang(Context context){
 
         if (!(new File(DATA_PATH + "tessdata/" + lang + ".traineddata")).exists()) {
@@ -92,6 +103,12 @@ public class ControleDeCaptura {
 
     }
 
+    /**
+     * Define o caminho a salvar a imagem retornada pela camera do dispositivo móvel
+     * @author Natanael
+     * @return void
+     */
+
     public void setImagePath() {
 
         Log.v(TAG, "Caminho imagem: " + DATA_PATH + "ocr.jpg");
@@ -100,11 +117,22 @@ public class ControleDeCaptura {
         ControleDeCaptura.imagePath = DATA_PATH + "ocr.jpg";
     }
 
+    /**
+     * Retorna o caminho da última imagem salva no dispositivo móvel
+     * @author Natanael
+     * @return String
+     */
+
     public String getImagePath() {
 
         return ControleDeCaptura.imagePath;
     }
 
+    /**
+     * Cria uma versão simplificada da imagem original
+     * @author Natanael
+     * @return Bitmap
+     */
     public Bitmap decodeBitmap(){
 
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -159,6 +187,12 @@ public class ControleDeCaptura {
 
         return bitmap;
     }
+
+    /**
+     * Aplica o reconhecimento de imagem
+     * @author Natanael
+     * @return String
+     */
 
     public String OCR(){
 
