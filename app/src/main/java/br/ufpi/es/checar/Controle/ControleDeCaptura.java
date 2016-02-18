@@ -129,7 +129,7 @@ public class ControleDeCaptura {
     }
 
     /**
-     * Cria uma versão simplificada da imagem original
+     * Cria uma versão simplificada da imagem original para economizar memória do dispositivo móvel
      * @author Natanael
      * @return Bitmap
      */
@@ -189,7 +189,7 @@ public class ControleDeCaptura {
     }
 
     /**
-     * Aplica o reconhecimento de imagem
+     * Utiliza a biblioteca tesseract para o reconhecimento de caracteres de uma imagem
      * @author Natanael
      * @return String
      */
@@ -233,44 +233,12 @@ public class ControleDeCaptura {
 
     }
 
-    public Intent configCropIntent(Context context){
-
-        Intent intent = new Intent("com.android.camera.action.CROP");
-
-        try {
-            //call the standard crop action intent (the user device may not support it)
-            //Intent intent = new Intent("com.android.camera.action.CROP");
-            //indicate image type and Uri
-
-            File file = new File(getImagePath());
-            Uri fileUri = Uri.fromFile(file);
-
-            intent.setDataAndType(fileUri, "image/*");
-            //set crop properties
-            intent.putExtra("crop", "true");
-            //indicate aspect of desired crop
-            intent.putExtra("aspectX", 1);
-            intent.putExtra("aspectY", 1);
-            //indicate output X and Y
-            intent.putExtra("outputX", 500);
-            intent.putExtra("outputY", 250);
-            //retrieve data on return
-            intent.putExtra("return-data", true);
-            //start the activity - we handle returning in onActivityResult
-
-
-        }
-        catch(ActivityNotFoundException anfe){
-            //display an error message
-            String errorMessage = "Seu dispositivo não suporta recorte! - Vá comprar outro";
-            Toast toast = Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT);
-            toast.show();
-        }
-
-        return intent;
-
-    }
-
+    /**
+     * Define a imagem de trabalho atual
+     * @author Natanael
+     * @param image
+     * @return void
+     */
     public void setImage(Bitmap image){
         ControleDeCaptura.image = image;
     }

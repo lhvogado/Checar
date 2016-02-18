@@ -12,6 +12,16 @@ import android.support.v4.content.ContextCompat;
  */
 public class ControleUtil {
 
+
+    /**
+     * Solicita uma permissão de uso de recursos  ao sistema
+     * @author Natanael
+     * @param context
+     * @param activity
+     * @param PERMISSION
+     * @param REQUEST_CODE
+     * @return void
+     */
     public void requestUserPermission(Context context, Activity activity, final String PERMISSION, final int REQUEST_CODE){
 
         String strPermission = "Manifest.permission." + PERMISSION;
