@@ -105,7 +105,12 @@ public class TelaNovoCNH extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Inicia a camera do dispositivo movel
+     * @author Natanael
+     * @param view
+     * @return void
+     */
     public void cameraCNH(View view){
         //Toast.makeText(TelaNovoCNH.this, "Sou um Button sem Configuracao :(", Toast.LENGTH_SHORT).show();
 

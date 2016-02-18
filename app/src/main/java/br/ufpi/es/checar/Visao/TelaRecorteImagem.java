@@ -82,6 +82,12 @@ public class TelaRecorteImagem extends AppCompatActivity {
     }
 
 
+    /**
+     * Realiza o recorte de uma imagem da camera do dispositivo móvel
+     * @author Natanael
+     * @param view
+     * @return void
+     */
     public void recortarImagem(View view){
 
         Bitmap bitmap = cropImageView.getCroppedImage();

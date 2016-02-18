@@ -93,6 +93,12 @@ public class TelaNovaPlaca extends AppCompatActivity {
     }
 
 
+    /**
+     * Inicia a camera do dispositivo movel
+     * @author Natanael
+     * @param view
+     * @return void
+     */
     public void cameraPlaca(View view){
         File file = new File(fachadaControle.getDiretorioImagem());
         Uri outputFileUri = Uri.fromFile(file);
