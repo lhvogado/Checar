@@ -1,0 +1,6 @@
+1) Capturar Placa (Carro)
+2) Capturar CNH (Documento)
+3) Buscar Veículo (Carro)
+4) Listar Veículos (Carro)
+5) Login (Pessoa)
+6) Gerar Contrato (Contrato, Pessoa, Documento, Carro)

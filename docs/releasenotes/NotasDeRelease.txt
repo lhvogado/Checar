@@ -1,0 +1,40 @@
+==========================================================================================================================================
+[PROJETO CHECAR] Release Notes - 17-02-2016
+==========================================================================================================================================
+link do projeto: https://github.com/lhvogado/Checar.git
+
+LISTA DE FUNCIONALIDADE DA RELEASE
+------------------------------------------------------------------------------------------------------------------------------------------
+-Gerar novo Contrato
+-Captura de Placa
+-Captura de CNH
+-Reconhecer Placa 
+-Reconhecer CNH
+-Conexão do Banco de Dados
+
+
+ARTEFATOS GERADOS
+------------------------------------------------------------------------------------------------------------------------------------------
+- Diagrama de Classes
+- 1º Iteração
+- JavaDocs
+
+Todos podem ser acessados a partir de 
+
+PROCEDIMENTOS PARA BAIXAR O PROJETO
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Projeto validado para o Android Studio - Versão 1.5.1 e junto com o Android NDK mais recente
+2. File -> New -> Project from Version Control -> GitHub
+3. Digite a sua senha do GitHub -> Coloque a URL do repositório https://github.com/lhvogado/Checar.git
+4. Selecione o diretório que vc deseja salvar o projeto em Parent Directory -> Defina o nome do projeto como Checar
+5. Clique em Clone -> Aguarde o Download -> O Download do repositório foi feito com sucesso
+
+
+PROCEDIMENTO PARA EXECUTAR A APLICAÇÃO USANDO A IDE
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Ative o modo de depuração USB do seu smartphone.
+2. Conecte usando um cabo USB o smartphone ao computador com o Android Studio em execução e o projeto aberto.
+3. Aperte Shift+F10.
+4. Selecione a opção Choose a running device.
+5. Selecione o Aparelho celular conectado e dê OK.
+
