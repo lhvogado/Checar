@@ -56,8 +56,8 @@ public class TelaRecorteImagem extends AppCompatActivity {
         Grayscale g = new Grayscale();
         g.applyInPlace(fb);
 
-        //OtsuThreshold otsu = new OtsuThreshold();
-        //otsu.applyInPlace(fb);
+        OtsuThreshold otsu = new OtsuThreshold();
+        otsu.applyInPlace(fb);
 
         //MaximumEntropyThreshold maximumEntropyThreshold = new MaximumEntropyThreshold();
         //maximumEntropyThreshold.applyInPlace(fb);

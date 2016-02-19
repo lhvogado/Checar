@@ -20,13 +20,13 @@ public class TelaCarregaDados extends AppCompatActivity {
         setContentView(R.layout.activity_carrega_dados);
 
         String cpf = this.getIntent().getStringExtra("CPF");
-
+        // Cria uma nova conexão com o banco de dados
         ControleBanco bd = new ControleBanco(getBaseContext());
-
+        // Declaração do cursor
         Cursor cursor1 = bd.carregaDadoById(cpf);
-
+        // Array de strings com os campos do banco de dados a serem mostrados
         String[] nomeCampos = new String[]{"CPF","RG","Nome"};
-
+        // Conecta as Id's de cada campo com a lista a ser exibida
         int[] idViews = new int[]{
                R.id.idCPFLista, R.id.idRGLista, R.id.idNome
         };

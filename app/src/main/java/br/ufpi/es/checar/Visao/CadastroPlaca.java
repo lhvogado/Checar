@@ -17,12 +17,13 @@ public class CadastroPlaca extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_placa);
-
+        // Tela de teste para cadastro de clientes no banco de dados
         Button botao = (Button) findViewById(R.id.buttonCadastroVeiculo);
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ControleBanco bd = new ControleBanco(getBaseContext());
+                // Variaveis correspondentes a cada um dos campos do banco de dados
                 EditText placa = (EditText) findViewById(R.id.editPlaca);
                 EditText fabricante = (EditText) findViewById(R.id.editFabricante);
                 EditText modelo = (EditText) findViewById(R.id.editModelo);
@@ -30,7 +31,7 @@ public class CadastroPlaca extends AppCompatActivity {
                 EditText ano = (EditText) findViewById(R.id.editAno);
                 EditText cor = (EditText) findViewById(R.id.editCor);
                 EditText motor = (EditText) findViewById(R.id.editMotor);
-
+                // Transformando para string
                 String Placa = placa.getText().toString();
                 String Fabricante = fabricante.getText().toString();
                 String Modelo = modelo.getText().toString();

@@ -16,14 +16,15 @@ public class TelaCarregaDadosVeiculo extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_tela_carrega_dados_veiculo);
-
+        // Recebe o parâmetro enviado pela tela anterior e armazena na String placa
             String placa = this.getIntent().getStringExtra("Placa");
-
+        // Cria uma nova conexão com o banco de dados
             ControleBanco bd = new ControleBanco(getBaseContext());
-
+        // Declaração do cursor
             Cursor cursor1 = bd.ListarCarros();
-
+        // Array de strings com os campos do banco de dados a serem mostrados
             String[] nomeCampos = new String[]{"Placa","Fabricante","Modelo","Versao","Ano","Cor","Motor"};
+        // Conecta as Id's de cada campo com a lista a ser exibida
             int[] idViews = new int[]{
                     R.id.idPlacaLista, R.id.idFabricanteLista,R.id.idModeloLista,
                     R.id.idVersaoLista, R.id.idAnoLista, R.id.idCorLista,

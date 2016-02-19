@@ -17,17 +17,17 @@ public class TelaCadastro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro);
-
+        // Tela de teste para cadastro de clientes no banco de dados
         Button botao = (Button) findViewById(R.id.buttoncadastro);
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ControleBanco bd = new ControleBanco(getBaseContext());
-
+                // Variaveis correspondentes a cada um dos campos do banco de dados
                 EditText cpf = (EditText) findViewById(R.id.textEditCPF);
                 EditText rg = (EditText) findViewById(R.id.editTextRG);
                 EditText nome = (EditText) findViewById(R.id.editTextNome);
-
+                // Transformando para string
                 String CPF = cpf.getText().toString();
                 String RG = rg.getText().toString();
                 String Nome = nome.getText().toString();
