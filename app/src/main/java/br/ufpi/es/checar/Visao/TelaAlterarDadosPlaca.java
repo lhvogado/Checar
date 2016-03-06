@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.ufpi.es.checar.Controle.FachadaControle;
+import br.ufpi.es.checar.Persistencia.ControleBanco;
 import br.ufpi.es.checar.R;
 
 public class TelaAlterarDadosPlaca extends AppCompatActivity {
@@ -27,20 +28,20 @@ public class TelaAlterarDadosPlaca extends AppCompatActivity {
         setContentView(R.layout.activity_tela_alterar_dados_placa);
 
 
-
-
         nome = fachadaControle.OCR();
         Log.v(TAG, "TEXTO RECONHECIDO: " + nome);
 
 
         _nome = (EditText) findViewById(R.id.editText_nome2);
         _nome.setText(nome);
-        //Buscar informações específicas no banco de dados a partir de um determinado CPF
 
     }
 
     public void teste(View view){
-        Intent intent = new Intent(this,TelaPrincipal.class);
+        String cpf = this.getIntent().getStringExtra("cpf");
+        Intent intent = new Intent(this,TelaCarregaDados.class);
+        intent.putExtra("cpf", cpf);
+        intent.putExtra("placa", nome);
         startActivity(intent);
     }
 }

@@ -33,16 +33,17 @@ public class TelaAlterarDadosCNH extends AppCompatActivity {
 
         nome = fachadaControle.OCR();
         Log.v(TAG, "TEXTO RECONHECIDO: " + nome);
-
-
         _nome = (EditText) findViewById(R.id.editText_nome);
         _nome.setText(nome);
+
+
         //Buscar informações específicas no banco de dados a partir de um determinado CPF
 
     }
 
     public void telaNovaPlaca(View view){
         Intent intent = new Intent(this,TelaNovaPlaca.class);
+        intent.putExtra("cpf", nome);
         startActivity(intent);
     }
 }

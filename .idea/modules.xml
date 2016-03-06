@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/libraries/Catalano.Android.Image/Catalano.Android.Image.iml" filepath="$PROJECT_DIR$/libraries/Catalano.Android.Image/Catalano.Android.Image.iml" />
       <module fileurl="file://$PROJECT_DIR$/Checar.iml" filepath="$PROJECT_DIR$/Checar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/cropper/cropper.iml" filepath="$PROJECT_DIR$/libraries/cropper/cropper.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/tess-two/tess-two.iml" filepath="$PROJECT_DIR$/libraries/tess-two/tess-two.iml" />
     </modules>

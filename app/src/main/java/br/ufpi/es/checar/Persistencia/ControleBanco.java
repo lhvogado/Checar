@@ -45,7 +45,6 @@ public class ControleBanco {
             return "Registro Inserido com sucesso";
 
     }
-
     /**
      * Insere no banco dos dados dos veículos através da função getWritableDatabase(). É importante lembrar que
      * o atributo db deve receber o resultado do método getWritableDatabase, que diz ao Android que o banco será
@@ -105,7 +104,8 @@ public class ControleBanco {
      */
     public Cursor carregaDadoById(String cpf) {
         Cursor cursor;
-        String[] campos = {"_id","CPF","RG","Nome"};
+        //O problema é o _id
+        String[] campos = {"CPF","_id","RG","Nome"};
         String where = "CPF" + "=" + cpf;
         db = banco.getReadableDatabase();
         cursor = db.query("cliente", campos, where, null, null, null, null, null);
@@ -123,8 +123,8 @@ public class ControleBanco {
      */
     public Cursor BuscaPlaca(String p) {
         Cursor cursor;
-        String[] campos = {"_id","Placa","Fabricante","Modelo","Versao","Ano","Cor","Motor"};
-        String where = "Placa" + "=" + p;
+        String[] campos = {"Placa","_id","Fabricante","Modelo","Versao","Ano","Cor","Motor"};
+        String where = "Fabricante" + "=" + p;
         db = banco.getReadableDatabase();
         cursor = db.query("carro", campos, where, null, null, null, null, null);
         if (cursor != null) {
@@ -149,7 +149,7 @@ public class ControleBanco {
         }
         db.close();
         return cursor;
-    }
+   }
 }
 //
 

@@ -44,9 +44,11 @@ public class TelaNovaPlaca extends AppCompatActivity {
             if(requestCode == CAMERA_CAPTURE){
                 //startActivityForResult(fachadaControle.configurarIntentRecorte(this), 2);
                 //Intent intent = new Intent(this, TelaAlterarDadosCNH.class);
+                String cpf = this.getIntent().getStringExtra("cpf");
                 String codigo = "telaNovaPlaca";
                 Intent intent = new Intent(this, TelaRecorteImagem.class);
                 intent.putExtra("codigo", codigo);
+                intent.putExtra("cpf",cpf);
                 startActivity(intent);
             }
         } else {

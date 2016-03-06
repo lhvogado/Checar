@@ -110,7 +110,7 @@ public class TelaPrincipal extends AppCompatActivity {
      * @return void
      */
     public void Cadastro(View view){
-        Intent intent = new Intent(this, CadastroPlaca.class);
+        Intent intent = new Intent(this,TelaCadastro.class);
         startActivity(intent);
     }
 
@@ -121,7 +121,7 @@ public class TelaPrincipal extends AppCompatActivity {
      * @return void
      */
     public void Buscar(View view){
-        Intent intent = new Intent(this, TelaCarregaDadosVeiculo.class);
+        Intent intent = new Intent(this, CadastroPlaca.class);
         startActivity(intent);
     }
 

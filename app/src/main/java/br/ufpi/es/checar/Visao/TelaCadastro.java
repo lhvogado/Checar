@@ -28,9 +28,12 @@ public class TelaCadastro extends AppCompatActivity {
                 EditText rg = (EditText) findViewById(R.id.editTextRG);
                 EditText nome = (EditText) findViewById(R.id.editTextNome);
                 // Transformando para string
-                String CPF = cpf.getText().toString();
-                String RG = rg.getText().toString();
-                String Nome = nome.getText().toString();
+                String CPF = "123";
+                        //cpf.getText().toString();
+                String RG = "234";
+                        //rg.getText().toString();
+                String Nome = "Na7an";
+                        //nome.getText().toString();
                 String result;
 
                 result = bd.InserirDado(CPF, RG, Nome);

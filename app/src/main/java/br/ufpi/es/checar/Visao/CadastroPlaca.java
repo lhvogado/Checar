@@ -32,14 +32,21 @@ public class CadastroPlaca extends AppCompatActivity {
                 EditText cor = (EditText) findViewById(R.id.editCor);
                 EditText motor = (EditText) findViewById(R.id.editMotor);
                 // Transformando para string
-                String Placa = placa.getText().toString();
+               /* String Placa = placa.getText().toString();
                 String Fabricante = fabricante.getText().toString();
                 String Modelo = modelo.getText().toString();
                 String Versao = versao.getText().toString();
                 String Ano = ano.getText().toString();
                 String Cor = cor.getText().toString();
                 String Motor = motor.getText().toString();
-
+*/
+                String Placa = "2345";
+                String Fabricante = "Kia";
+                String Modelo = "Soul";
+                String Ano = "2015";
+                String Versao = "Ex";
+                String Cor = "Vermelho";
+                String Motor = "2.0";
                 String result;
 
                 result = bd.InserirPlaca(Placa, Fabricante, Modelo, Versao, Ano, Cor, Motor);
