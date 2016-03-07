@@ -43,6 +43,7 @@ public class TelaAlterarDadosCNH extends AppCompatActivity {
 
     public void telaNovaPlaca(View view){
         Intent intent = new Intent(this,TelaNovaPlaca.class);
+        nome = _nome.getText().toString();
         intent.putExtra("cpf", nome);
         startActivity(intent);
     }

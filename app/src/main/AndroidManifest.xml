@@ -41,6 +41,7 @@
         <activity android:name=".Visao.CadastroPlaca" />
         <activity android:name=".Visao.TelaNovaPlaca" />
         <activity android:name=".Visao.TelaAlterarDadosPlaca" />
+        <activity android:name=".Visao.TelaTeste"></activity>
     </application>
 
 </manifest>

@@ -39,9 +39,14 @@ public class TelaAlterarDadosPlaca extends AppCompatActivity {
 
     public void teste(View view){
         String cpf = this.getIntent().getStringExtra("cpf");
-        Intent intent = new Intent(this,TelaCarregaDados.class);
-        intent.putExtra("cpf", cpf);
-        intent.putExtra("placa", nome);
-        startActivity(intent);
+
+        nome = _nome.getText().toString();
+        Log.i(TAG, "CPF: "+ cpf);
+        //Intent intent = new Intent(this,TelaCarregaDados.class);
+        //intent.putExtra("cpf", cpf);
+        //intent.putExtra("placa", nome);
+        //startActivity(intent);
+        fachadaControle.gerarPDF(cpf, nome, this);
+
     }
 }

@@ -12,13 +12,14 @@ public class FachadaControle {
 
     private ControleDeCaptura meuControleDeCaptura;
     private ControleUtil meuControleUtil;
-    //private ControleDePessoa meuControleDePessoa;
+    private ControleDePessoa meuControleDePessoa;
 
 
 
     public FachadaControle(){
         meuControleDeCaptura = new ControleDeCaptura();
         meuControleUtil = new ControleUtil();
+        meuControleDePessoa = new ControleDePessoa();
     }
 
 
@@ -89,6 +90,10 @@ public class FachadaControle {
      */
     public void solicitarPermissao(Context context, Activity activity, final String PERMISSION, final int REQUEST_CODE){
         meuControleUtil.requestUserPermission(context, activity, PERMISSION, REQUEST_CODE);
+    }
+
+    public void gerarPDF(String CPF, String placa, Context context){
+        meuControleDePessoa.generatePDF(CPF, placa, context);
     }
 
 }
