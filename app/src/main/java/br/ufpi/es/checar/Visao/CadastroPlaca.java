@@ -40,13 +40,13 @@ public class CadastroPlaca extends AppCompatActivity {
                 String Cor = cor.getText().toString();
                 String Motor = motor.getText().toString();
 */
-                String Placa = "2345";
-                String Fabricante = "Kia";
-                String Modelo = "Soul";
+                String Placa = "PLA 0000";
+                String Fabricante = "Fiat";
+                String Modelo = "Pálio";
                 String Ano = "2015";
-                String Versao = "Ex";
-                String Cor = "Vermelho";
-                String Motor = "2.0";
+                String Versao = "Sporting";
+                String Cor = "Branco";
+                String Motor = "1.6";
                 String result;
 
                 result = bd.InserirPlaca(Placa, Fabricante, Modelo, Versao, Ano, Cor, Motor);

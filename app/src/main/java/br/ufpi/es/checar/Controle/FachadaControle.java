@@ -92,6 +92,12 @@ public class FachadaControle {
         meuControleUtil.requestUserPermission(context, activity, PERMISSION, REQUEST_CODE);
     }
 
+    /**
+     * Gera um arquivo pdf
+     * @param CPF
+     * @param placa
+     * @param context
+     */
     public void gerarPDF(String CPF, String placa, Context context){
         meuControleDePessoa.generatePDF(CPF, placa, context);
     }

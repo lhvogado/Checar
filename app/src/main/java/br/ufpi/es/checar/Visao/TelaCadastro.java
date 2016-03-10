@@ -28,11 +28,11 @@ public class TelaCadastro extends AppCompatActivity {
                 EditText rg = (EditText) findViewById(R.id.editTextRG);
                 EditText nome = (EditText) findViewById(R.id.editTextNome);
                 // Transformando para string
-                String CPF = "123";
+                String CPF = "1163259460";
                         //cpf.getText().toString();
-                String RG = "234";
+                String RG = "3351296";
                         //rg.getText().toString();
-                String Nome = "Na7an";
+                String Nome = "Luis Henrique Silva Vogado";
                         //nome.getText().toString();
                 String result;
 
